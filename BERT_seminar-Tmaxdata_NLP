@@ -17,3 +17,7 @@ BERT large 는 성능을 위해서 베이스보다 크게 만든 것
 프리 트레이닝 모델 - MLM(Masked LM), NSP(Next Sentence Prediction)
 15퍼센트 중에 80퍼는 마스크, 10퍼는 엉뚱한 단어, 10퍼는 안바꾸고 그대로 이용 (Empirical 하게 하다가..?)
 엉뚱한 단어는 1.5퍼센트여서 LM 이해력에 크게 영향 끼치지 않는다?
+학습되는 양 자체가 15퍼센트라 converge하는게 느리지 않겠냐, 근데 empirical하게는 빠름
+문장 두개 주고 뒤의 문장의 앞의 문장의 다음문장인지 테스트 - QA나 NLI(natural language inference?)에서 beneficial했다.
+pre training task 효과 알아보기 위해 1. No NSP 2. Left to right & No NSP 
+BERT Large는 데이터셋이 작아도(몇백개 몇천개 정도 사이즈) 더 효과가 좋음
