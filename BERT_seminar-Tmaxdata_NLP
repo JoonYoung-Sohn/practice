@@ -1,0 +1,19 @@
+BERT에서 주장하는건 bidirectional하다는 것이 강점
+LM자체가 새로운 단어를 유출 하며 학습 시키는 것 - 선천적으로 unidirectional하다.
+BERT는 mask하니 bidirectional, 512토큰까지 가능, 이상은 OOM 뜰 수도
+두세 에포크만 돌면 SOTA 달성? 글루랑 스쿼드라는 데이터셋
+ELMO는 앞에서 추측, 뒤에서 추측한거라 진정한 의미의 양방향성이 아님
+MLM은 전체 문장을 받아서 LM 향상, 임의로 마스크를 뚫어주기 때문에 라벨을 따로 생성할 필요가 없다. cbow랑 비슷?
+BERT는 fine tuning approach 느낌이 더 강함
+feature based approach는 ELMO, 근데 BERT도 가능-
+unsupervied data pretraining 중요! 웹 상에 있는 많은 데이터들을 가져다 쓸 수 있다
+BERT는 트랜스포머 그대로 이용, 인코더에서 모든 문장 다 받음
+OpenAI GPT는 어텐션을 쓰지만 인코더는 아니기 때문에 트랜스포머 형식은 아님
+BERT가 잘 된 이유를 찾기 위해 기능들을 하나씩 제거해봄
+BERT base 자체가 GPT 모델이랑 하이퍼 파라미터가 같은데 버트는 양방향성이라서 단순히 잘 됨
+BERT large 는 성능을 위해서 베이스보다 크게 만든 것
+인풋을 어떻게 구성할 것이냐 - 문단 이상의 큰 토큰, 해당 지문을 통으로 넣어서 QA를 구성
+워드피스임베딩(언어와 무관하게 작용할 수 있는 임베딩?)을 이용, 3만 토큰을 사용, 포지셔널 임베딩(트랜스포머랑 같이), 세그멘트 임베딩(Q와 A를 어떻게 구분할 것인지)
+프리 트레이닝 모델 - MLM(Masked LM), NSP(Next Sentence Prediction)
+15퍼센트 중에 80퍼는 마스크, 10퍼는 엉뚱한 단어, 10퍼는 안바꾸고 그대로 이용 (Empirical 하게 하다가..?)
+엉뚱한 단어는 1.5퍼센트여서 LM 이해력에 크게 영향 끼치지 않는다?
