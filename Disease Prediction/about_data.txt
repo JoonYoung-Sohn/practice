@@ -1,0 +1,90 @@
+- 자격 DB
+기준년도 2002~2013년
+개인일련번호
+성
+연령
+사망일자
+사망원인1,2
+시도코드
+가입자구분
+소득분위
+장애중증도구분
+장애유형구분
+장애등록일자
+
+- 진료 DB
+개인일련번호
+청구일련번호
+요양기관식별대체번호
+요양개시일자
+서식코드
+진료과목코드
+주상병
+부상병
+입원경로구분
+요양일수
+입내원일수
+최초입원일
+심결가산율
+심결요양급여비용총액
+심결본인부담금
+심결보험자부담금
+심결CT총액
+심결MRI총액
+청구DRG번호
+처방전발행기관식별대체번호
+총처방일수
+
+- 건강검진 DB
+신장
+체중
+허리둘레
+수축기혈압
+이완기혈압
+식전혈당
+총콜레스테롤
+트리글리세라이드
+HDL콜레스테롤
+LDL콜레스테롤
+혈색소
+요당
+요잠혈
+요PH
+요단백
+혈청크레아티닌
+AST
+ALT
+감마지티피
+과거력
+가족력
+흡연상태
+하루 흡연량
+과거 평균 하루 흡연량
+현재 평균 하루 흡연량
+과거, 현재 흡연기간
+1주 평균 음주일수
+1일 음주량
+운동횟수
+인지기능검사
+
+- 요양기관 DB
+기준년도
+요양기관식별대체번호
+요양기관종별코드
+요양기관설립구분
+요양기관시도코드
+병상수
+의사수
+CT유무
+MRI유무
+PET유무
+
+- 노인코호트 DB를 이용한 딥러닝 기반의 뇌졸중 질환 예측 모델
+CNN을 통한 multi classification
+batch normalization을 통해 gradient vanishing이랑 local minima 해결
+Data preprocessing & Generalization -> input (1D vecter 64x1)
+-> {CNN(3x1) -> Max pooling(2x1)}x3 -> Flattening -> Fully connected -> softmax
+초기 학습률 0.01로 시작, 전체 훈련 횟수의 50%에서 0.001로, 75%의 훈련 횟수에서 0.0001로
+64개 feature 0~1 사이로 전처리
+batch normalization, sub-sampling, number of fully connected layer 조정하며 Accuracy 비교
+Max iteration은 30000~50000
