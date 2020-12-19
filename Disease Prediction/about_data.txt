@@ -88,3 +88,4 @@ Data preprocessing & Generalization -> input (1D vecter 64x1)
 64개 feature 0~1 사이로 전처리
 batch normalization, sub-sampling, number of fully connected layer 조정하며 Accuracy 비교
 Max iteration은 30000~50000
+CNN 대신 transformer 이용?
