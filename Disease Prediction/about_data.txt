@@ -90,4 +90,8 @@ batch normalization, sub-sampling, number of fully connected layer 조정하며 
 Max iteration은 30000~50000
 
 CNN, LSTM, transformer, BERT 등 다양하게 이용해보고 비교 (data가 sequential한 의미 있는게 아니라 CNN 쓰는가?)
-preprocessing 과정에 텍스트 데이터들을 수로 바꿔야하는데 그 과정에 NLP 이용하면 편리하지 않을까
+preprocessing 과정에 텍스트 데이터들을 수로 바꿔야하는데 그 과정에 NLP 이용하면 편리하지 않을까 -> 필요없을듯, 간단한 python script로 해결할 수 있지 않을까
+Data가 연 단위이므로 sequential한 data 맞다고 가정.
+output은 n년 후 발병 확률이니 softmax 사용? -> 당연히 해를 거듭할수록 발병확률이 증가하지 않을까
+-> 0~5년 정도 후의 확률을 모두 추출하고 간단한 script 통해 걸러서 표시하면 어떨까 -> 그러면 2015년까지의 데이터만을 이용해야하는가
+input으로 매년의 변화율도 같이 concatenate해서 넣으면 어떨까
