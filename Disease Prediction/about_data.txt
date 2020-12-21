@@ -89,6 +89,9 @@ Data preprocessing & Generalization -> input (1D vecter 64x1)
 batch normalization, sub-sampling, number of fully connected layer 조정하며 Accuracy 비교
 Max iteration은 30000~50000
 
+- Benchmarking deep learning models on large healthcare datasets
+Recurrent neural network (RNN) models have been shown to be successful at modeling sequences and time series data [60]. RNN with simple activations are incapable of capturing long term dependencies, and hence their variants such as Long Short Term Memory (LSTM) [43] and Gated Recurrent Unit (GRU) [61] have become popular due to their ability to capture long-term dependencies using memory and gating units. 
+
 CNN, LSTM, transformer, BERT 등 다양하게 이용해보고 비교 (data가 sequential한 의미 있는게 아니라 CNN 쓰는가?)
 preprocessing 과정에 텍스트 데이터들을 수로 바꿔야하는데 그 과정에 NLP 이용하면 편리하지 않을까 -> 필요없을듯, 간단한 python script로 해결할 수 있지 않을까
 Data가 연 단위이므로 sequential한 data 맞다고 가정.
